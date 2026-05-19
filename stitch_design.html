@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sonic Sanctuary - Voice Log</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800&amp;family=Work+Sans:wght@400;500&amp;family=Space+Grotesk:wght@500&amp;family=Noto+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .bg-grid-pattern {
+                background-image: 
+                    linear-gradient(to right, #c0c8c7 1px, transparent 1px),
+                    linear-gradient(to bottom, #c0c8c7 1px, transparent 1px);
+                background-size: 24px 24px;
+                background-position: center top;
+            }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#194e4e",
+                        "tertiary-container": "#3b3b3b",
+                        "surface-container-highest": "#e4e2dc",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#707978",
+                        "primary-fixed": "#b8eceb",
+                        "secondary": "#ae2a00",
+                        "surface-variant": "#e4e2dc",
+                        "surface-bright": "#fbf9f3",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f6f3ed",
+                        "inverse-surface": "#30312d",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container": "#f0eee8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "primary-fixed-dim": "#9dd0cf",
+                        "surface-container-high": "#eae8e2",
+                        "on-secondary-container": "#fffbff",
+                        "surface-tint": "#346666",
+                        "surface": "#fbf9f3",
+                        "on-secondary-fixed": "#3c0800",
+                        "primary": "#002b2b",
+                        "on-background": "#1b1c18",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb5a1",
+                        "on-primary-container": "#7caead",
+                        "tertiary-fixed": "#e5e2e1",
+                        "secondary-container": "#da3700",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-tertiary-container": "#a7a5a4",
+                        "on-surface": "#1b1c18",
+                        "primary-container": "#074242",
+                        "on-secondary-fixed-variant": "#881f00",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#002020",
+                        "inverse-primary": "#9dd0cf",
+                        "inverse-on-surface": "#f3f1eb",
+                        "background": "#fbf9f3",
+                        "tertiary": "#262525",
+                        "surface-dim": "#dcdad4",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#ffdbd1",
+                        "outline-variant": "#c0c8c7",
+                        "on-surface-variant": "#404848"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "gutter": "20px",
+                        "container-padding": "24px",
+                        "base": "8px",
+                        "element-gap": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["epilogue"],
+                        "accent-script": ["notoSerif"],
+                        "label-mono": ["spaceGrotesk"],
+                        "headline-lg": ["epilogue"],
+                        "body-md": ["workSans"],
+                        "headline-xl": ["epilogue"],
+                        "body-lg": ["workSans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "accent-script": ["24px", {"fontWeight": "400"}],
+                        "label-mono": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background min-h-screen flex flex-col font-body-md text-on-background antialiased relative bg-grid-pattern opacity-90">
+<!-- Top Nav Placeholder (from JSON) -->
+<header class="bg-[#FDFCFB] dark:bg-emerald-950 text-emerald-900 dark:text-emerald-50 font-epilogue font-bold uppercase tracking-tighter docked full-width top border-b-2 border-slate-900 dark:border-emerald-800 flat no shadows flex justify-between items-center w-full px-12 py-8 max-w-[1440px] mx-auto z-50 bg-opacity-95">
+<div class="text-2xl font-black tracking-widest text-emerald-900 dark:text-white">SONIC SANCTUARY</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-slate-600 dark:text-emerald-100/70 hover:bg-emerald-900 hover:text-white dark:hover:bg-emerald-800 transition-colors active:translate-y-0.5 duration-75" href="#">STUDIOS</a>
+<a class="text-slate-600 dark:text-emerald-100/70 hover:bg-emerald-900 hover:text-white dark:hover:bg-emerald-800 transition-colors active:translate-y-0.5 duration-75" href="#">ENGINEERS</a>
+<a class="text-slate-600 dark:text-emerald-100/70 hover:bg-emerald-900 hover:text-white dark:hover:bg-emerald-800 transition-colors active:translate-y-0.5 duration-75" href="#">EQUIPMENT</a>
+<a class="text-emerald-900 dark:text-emerald-300 border-b-2 border-emerald-900 pb-1 hover:bg-emerald-900 hover:text-white dark:hover:bg-emerald-800 transition-colors active:translate-y-0.5 duration-75" href="#">LOGS</a>
+<a class="text-slate-600 dark:text-emerald-100/70 hover:bg-emerald-900 hover:text-white dark:hover:bg-emerald-800 transition-colors active:translate-y-0.5 duration-75" href="#">BOOKING</a>
+</nav>
+<button class="hidden md:block bg-secondary text-on-secondary font-label-mono px-6 py-3 uppercase tracking-wider font-bold hover:bg-secondary-container transition-colors border border-transparent">START SESSION</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center py-section-gap px-container-padding z-10 relative">
+<!-- Testimonial Slice Container -->
+<section class="w-full max-w-6xl relative h-[450px] flex items-center justify-center">
+<!-- Deep Green Background Block (Technical Blueprint Base) -->
+<div class="absolute inset-y-12 right-0 left-32 bg-primary-container border-2 border-primary z-0 shadow-[8px_8px_0px_#1b1c18]">
+<div class="absolute top-4 left-4 border border-on-primary-container/30 px-2 py-1 font-label-mono text-on-primary-container text-xs opacity-70 tracking-widest">
+                     SYS_ID: 084_TESTIMONIAL
+                 </div>
+<div class="absolute bottom-4 right-4 flex gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary animate-pulse"></div>
+<span class="font-label-mono text-on-primary-container text-xs opacity-70">REC</span>
+</div>
+</div>
+<!-- Overlapping White Content Panel (Editorial Layer) -->
+<div class="absolute left-0 right-48 top-0 bottom-0 bg-surface-container-lowest border-2 border-primary z-10 p-12 flex flex-col justify-between shadow-[-4px_4px_0px_#1b1c18]">
+<!-- Header / Label -->
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">graphic_eq</span>
+<span class="font-label-mono text-label-mono text-outline uppercase tracking-[0.2em] border-b border-outline-variant pb-1">VOICE_LOG.04</span>
+</div>
+<!-- Quote Body -->
+<div class="flex-grow flex items-center relative">
+<span class="material-symbols-outlined absolute -top-4 -left-4 text-6xl text-surface-container-highest opacity-50 -z-10" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<blockquote class="font-headline-md text-headline-md text-primary max-w-2xl leading-tight">
+                        "The room has a soul. You can't patch that in later. It forces you to be honest with the take."
+                    </blockquote>
+</div>
+<!-- Footer / Signature -->
+<div class="mt-8 flex items-end justify-between border-t border-surface-container-highest pt-6">
+<div class="flex flex-col gap-1">
+<cite class="font-label-mono text-label-mono text-primary uppercase font-bold not-italic">ELARA VANCE</cite>
+<span class="font-body-md text-sm text-on-surface-variant">Lead Producer, 'Neon Drift'</span>
+</div>
+<div class="font-accent-script text-accent-script text-secondary opacity-80 transform -rotate-2 scale-125 origin-bottom-right">
+                        E. Vance
+                    </div>
+</div>
+</div>
+<!-- Monochrome Image Layer -->
+<div class="absolute right-12 top-1/2 -translate-y-1/2 w-64 h-80 z-20 border-2 border-primary bg-tertiary overflow-hidden shadow-[4px_4px_0px_#ae2a00]">
+<img alt="Monochrome image of a vintage audio mixing console with illuminated VU meters and numerous knobs. The lighting is moody and technical, emphasizing the industrial, tactile nature of high-end music production equipment in a dimly lit studio setting." class="w-full h-full object-cover filter grayscale contrast-125 opacity-90 mix-blend-luminosity" data-alt="Monochrome image of a vintage audio mixing console with illuminated VU meters and numerous knobs. The lighting is moody and technical, emphasizing the industrial, tactile nature of high-end music production equipment in a dimly lit studio setting. The aesthetic is raw, professional, and slightly gritty, aligning with an earthy, technical music studio vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACe1W5Sdem3w8COmHw4PgjPhJhbQBap2-95VHLWO9TK3darhi1TDW_uRxAi8s_0fMMI5eq_sK6pmQ3vlzj5aXVi-zLX_yVssiffp1V-nIDxhZl4nHgb2qedtAY7N3S7pj8wq5pUHD2h1B1p3px52utgRNt8hgP1a0YhszfLf_LfoE_5_GrMjIRqguhi7I6ceSbAWFv5OdTBDwYWMzMjtFI4JS_hAtwNAjEEAq2QIWphg2J05anc6QtKvwZ8YlvkxlYYqJB9oc7gxQN"/>
+<div class="absolute inset-0 border border-white/20 m-2 pointer-events-none"></div>
+</div>
+</section>
+</main>
+<!-- Footer Placeholder (from JSON) -->
+<footer class="bg-slate-900 dark:bg-black text-emerald-50 font-epilogue text-[10px] uppercase tracking-[0.2em] font-medium full-width border-t-2 border-emerald-900 flat no shadows w-full py-20 px-12 flex flex-col items-center justify-center text-center gap-10 z-50">
+<div class="text-xl font-black text-white">SONIC SANCTUARY</div>
+<div class="flex gap-6">
+<a class="text-slate-400 hover:text-white hover:tracking-[0.25em] transition-all opacity-90 hover:opacity-100" href="#">Technical Specs</a>
+<a class="text-emerald-400 font-bold hover:tracking-[0.25em] transition-all opacity-90 hover:opacity-100" href="#">Session Logs</a>
+<a class="text-slate-400 hover:text-white hover:tracking-[0.25em] transition-all opacity-90 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-slate-400 hover:text-white hover:tracking-[0.25em] transition-all opacity-90 hover:opacity-100" href="#">Terms of Service</a>
+</div>
+<div>© 2024 SONIC SANCTUARY ARCHIVE. ENGINEERED FOR PRECISION.</div>
+</footer>
+</body></html>

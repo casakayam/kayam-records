@@ -1,0 +1,172 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Kayam Brand Colors */
+  --color-kayam-beige: oklch(0.91 0.02 80);
+  --color-kayam-noir: oklch(0 0 0);
+  --color-kayam-orange: oklch(0.58 0.22 28);
+  --color-kayam-taupe: oklch(0.76 0.03 80);
+  --color-kayam-forest: oklch(0.30 0.06 180);
+  --color-kayam-orange-warm: oklch(0.60 0.20 55);
+  --color-kayam-terracotta: oklch(0.45 0.17 30);
+  --color-kayam-teal: oklch(0.45 0.10 180);
+  --color-kayam-teal-light: oklch(0.50 0.12 180);
+
+  /* Font families */
+  --font-anton: 'Anton', sans-serif;
+  --font-brittany: 'Allura', 'Brittany', cursive;
+  --font-akshar: 'Akshar', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.91 0.02 80);
+  --foreground: oklch(0.20 0.02 80);
+  --card: oklch(0.93 0.015 80);
+  --card-foreground: oklch(0.20 0.02 80);
+  --popover: oklch(0.93 0.015 80);
+  --popover-foreground: oklch(0.20 0.02 80);
+  --primary: oklch(0.58 0.22 28);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.76 0.03 80);
+  --secondary-foreground: oklch(0.20 0.02 80);
+  --muted: oklch(0.85 0.02 80);
+  --muted-foreground: oklch(0.45 0.02 80);
+  --accent: oklch(0.30 0.06 180);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.58 0.22 28);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.76 0.03 80);
+  --input: oklch(0.76 0.03 80);
+  --ring: oklch(0.58 0.22 28);
+  --chart-1: oklch(0.58 0.22 28);
+  --chart-2: oklch(0.45 0.10 180);
+  --chart-3: oklch(0.30 0.06 180);
+  --chart-4: oklch(0.60 0.20 55);
+  --chart-5: oklch(0.45 0.17 30);
+  --sidebar: oklch(0.91 0.02 80);
+  --sidebar-foreground: oklch(0.20 0.02 80);
+  --sidebar-primary: oklch(0.58 0.22 28);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.76 0.03 80);
+  --sidebar-accent-foreground: oklch(0.20 0.02 80);
+  --sidebar-border: oklch(0.76 0.03 80);
+  --sidebar-ring: oklch(0.58 0.22 28);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    /* `clip` prevents horizontal overflow without making html a scroll container
+       (which `hidden` would do, breaking window.scrollY tracking on some engines). */
+    overflow-x: clip;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Akshar', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333333;
+    overflow-x: clip;
+  }
+  
+  /* Subtle text grain — text-shadow only, no filter to avoid per-element GPU layers */
+  h1, h2, h3, h4, h5, h6, p, span, a, li, button {
+    text-shadow: 0.5px 0.5px 0px rgba(0,0,0,0.1);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+
+  /* Kayam link style */
+  .kayam-link {
+    color: #0d6969;
+    transition: color 0.2s ease;
+  }
+  .kayam-link:hover {
+    color: #0c8686;
+  }
+
+  /* Hero responsive styling */
+  .hero-grid {
+    @media (max-width: 768px) {
+      display: flex !important;
+      flex-direction: column;
+    }
+  }
+
+  .hero-title-mobile {
+    @media (max-width: 768px) {
+      text-align: left;
+      width: 100%;
+      /* Use a slightly smaller font size on very small screens to leave right margin */
+      font-size: clamp(48px, 13vw, 68px) !important;
+    }
+  }
+
+  .hero-description {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .hero-photo {
+    @media (max-width: 768px) {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+}

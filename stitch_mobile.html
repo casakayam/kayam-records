@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Artist Voice</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&amp;family=Noto+Serif:ital@0;1&amp;family=Space+Grotesk:wght@500&amp;family=Work+Sans:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#262525",
+                        "inverse-on-surface": "#f3f1eb",
+                        "on-primary-fixed-variant": "#194e4e",
+                        "tertiary-container": "#3b3b3b",
+                        "on-secondary-container": "#fffbff",
+                        "surface-container-highest": "#e4e2dc",
+                        "on-surface": "#1b1c18",
+                        "surface-bright": "#fbf9f3",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-primary-container": "#7caead",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface": "#fbf9f3",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface-dim": "#dcdad4",
+                        "surface-container-high": "#eae8e2",
+                        "secondary-container": "#da3700",
+                        "on-surface-variant": "#404848",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "background": "#fbf9f3",
+                        "primary-fixed": "#b8eceb",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#881f00",
+                        "on-error": "#ffffff",
+                        "surface-container": "#f0eee8",
+                        "outline-variant": "#c0c8c7",
+                        "on-primary-fixed": "#002020",
+                        "primary-container": "#074242",
+                        "on-secondary-fixed": "#3c0800",
+                        "inverse-primary": "#9dd0cf",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e4e2dc",
+                        "secondary-fixed-dim": "#ffb5a1",
+                        "inverse-surface": "#30312d",
+                        "secondary-fixed": "#ffdbd1",
+                        "outline": "#707978",
+                        "primary": "#002b2b",
+                        "primary-fixed-dim": "#9dd0cf",
+                        "surface-container-low": "#f6f3ed",
+                        "on-tertiary-container": "#a7a5a4",
+                        "secondary": "#ae2a00",
+                        "on-background": "#1b1c18",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#346666"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "element-gap": "16px",
+                        "gutter": "20px",
+                        "container-padding": "24px",
+                        "section-gap": "120px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Work Sans"],
+                        "headline-lg": ["Epilogue"],
+                        "body-lg": ["Work Sans"],
+                        "label-mono": ["Space Grotesk"],
+                        "headline-xl": ["Epilogue"],
+                        "headline-md": ["Epilogue"],
+                        "accent-script": ["Noto Serif"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-mono": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "accent-script": ["24px", { "fontWeight": "400", "fontStyle": "italic" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .bg-paper {
+                background-color: #F2F0EA;
+            }
+            .text-forest {
+                color: #074242;
+            }
+            .bg-forest {
+                background-color: #074242;
+            }
+            .border-forest {
+                border-color: #074242;
+            }
+            .border-ink {
+                border-color: #1A1A1A;
+            }
+            .text-ink {
+                color: #1A1A1A;
+            }
+            .text-accent-red {
+                color: #D9433E;
+            }
+            .bg-accent-red {
+                background-color: #D9433E;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-paper font-body-md text-on-surface antialiased min-h-screen flex flex-col pt-16 pb-20">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#F2F0EA] dark:bg-[#0A1A1A] border-b-2 border-[#1A1A1A] dark:border-[#E4E2DD]">
+<button class="flex items-center justify-center w-10 h-10 hover:bg-[#E4E2DD] dark:hover:bg-[#1A1A1A] transition-colors rounded-DEFAULT">
+<span class="material-symbols-outlined text-[#074242] dark:text-[#E4E2DD]">graphic_eq</span>
+</button>
+<h1 class="font-['Epilogue'] uppercase tracking-widest font-bold text-lg font-black tracking-tighter text-[#074242] dark:text-[#E4E2DD]">ARTIST_VOICE</h1>
+<button class="flex items-center justify-center w-10 h-10 hover:bg-[#E4E2DD] dark:hover:bg-[#1A1A1A] transition-colors rounded-DEFAULT">
+<span class="material-symbols-outlined text-[#074242] dark:text-[#E4E2DD]">settings_input_component</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col items-center justify-center p-6 relative overflow-hidden">
+<!-- Technical Grid Background Accent (Subtle) -->
+<div class="absolute inset-0 pointer-events-none opacity-5" style="background-image: linear-gradient(#1A1A1A 1px, transparent 1px), linear-gradient(90deg, #1A1A1A 1px, transparent 1px); background-size: 32px 32px;"></div>
+<!-- Layered Composition Container -->
+<div class="relative w-full max-w-md h-[353px] min-h-[350px] mt-12 mb-12">
+<!-- Large Rotated Forest Green Block -->
+<div class="absolute inset-0 bg-primary-container rounded-DEFAULT rotate-[-3deg] transform origin-bottom-left shadow-sm border border-ink/20"></div>
+<!-- Overlapping Monochrome Studio Photo -->
+<div class="absolute -top-8 -right-4 w-28 h-36 border-2 border-ink bg-surface shadow-[4px_4px_0px_#1A1A1A] overflow-hidden rotate-[4deg] z-10">
+<img class="w-full h-full object-cover grayscale contrast-125" data-alt="A small, high-contrast monochrome photograph of a vintage condenser microphone in a dimly lit, professional recording studio. The aesthetic is gritty and editorial, capturing the essence of an analog music production environment. The lighting is moody, highlighting the metallic texture of the microphone against a dark background, fitting the high-end, tactile modernism of the UI design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSHYb_2oN1ambSER9vh6FuV3sS3ZjPSCwv5lThKMyD_22iKOwSSP9T2NUkaHKyEWnqQoPrDTiF3IKDkEWX_09oLq-oax2I8M0EoeO4CiduAKz4Lfll8yZDyEVAoaOscJBQQ5SVVC299nD-1QLvCFhQ_dL_-GyWD5HpQQfd7ycCUOTSr0a8LBEsdK6Y0vR7K4sn6U-Km2GXpKz3nx4DKhZBwBO7mP6T0_ql_SwaBAuDNmc0CW-cqEN8w427Knusz5DeRsjfklZ_yWH_"/>
+</div>
+<!-- Content Canvas -->
+<div class="absolute inset-2 bg-surface-container-lowest border border-ink p-6 flex flex-col justify-between rotate-[1deg] z-20 shadow-[2px_2px_0px_#1A1A1A]">
+<!-- Technical Label -->
+<div class="flex justify-between items-center mb-4">
+<span class="font-label-mono text-label-mono text-outline uppercase tracking-widest border border-outline px-2 py-0.5 text-xs">VOICE_LOG: 01</span>
+<span class="w-12 border-b border-dashed border-outline"></span>
+</div>
+<!-- Artist Quote -->
+<div class="flex-grow flex items-center pr-12">
+<p class="font-accent-script text-accent-script text-on-surface leading-tight">
+                        "The space itself became an instrument. Every reflection, every shadow shaped the mix."
+                    </p>
+</div>
+<!-- Signature & Footer -->
+<div class="mt-4 flex items-end justify-between border-t border-surface-variant pt-4">
+<div>
+<p class="font-headline-md text-sm font-bold uppercase tracking-widest text-primary">M. Thorne</p>
+<p class="font-label-mono text-xs text-outline mt-1">Lead Engineer // Studio A</p>
+</div>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+</div>
+<!-- Floating Decorative Element -->
+<div class="absolute -bottom-6 left-6 z-30">
+<div class="bg-secondary text-on-secondary font-label-mono text-[10px] px-3 py-1 uppercase tracking-widest border border-ink shadow-[2px_2px_0px_#1A1A1A] -rotate-2">
+                    Verified Session
+                </div>
+</div>
+</div>
+<!-- Additional Decorative Elements (Technical aesthetic) -->
+<div class="w-full max-w-md flex justify-between items-center mt-auto pb-8">
+<div class="flex space-x-2">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<div class="w-2 h-2 rounded-full border border-ink"></div>
+<div class="w-2 h-2 rounded-full border border-ink"></div>
+</div>
+<div class="font-label-mono text-xs text-outline">SWIPE TO LOAD PRESET</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-2 pb-safe bg-[#F2F0EA] dark:bg-[#0A1A1A] border-t-2 border-[#1A1A1A] dark:border-[#E4E2DD]">
+<!-- STUDIO Tab -->
+<button class="flex flex-col items-center justify-center text-[#074242] dark:text-[#8C8A85] p-2 hover:bg-[#E4E2DD] dark:hover:bg-[#1A1A1A] w-full h-full">
+<span class="material-symbols-outlined mb-1">mic_external_on</span>
+<span class="font-['Epilogue'] text-[10px] font-bold uppercase tracking-wider">STUDIO</span>
+</button>
+<!-- VAULT Tab (Active based on "Artist Voice" intent) -->
+<button class="flex flex-col items-center justify-center bg-[#D9433E] text-white p-2 border-x border-[#1A1A1A] w-full h-full scale-95 transition-all duration-100">
+<span class="material-symbols-outlined mb-1">inventory_2</span>
+<span class="font-['Epilogue'] text-[10px] font-bold uppercase tracking-wider">VAULT</span>
+</button>
+<!-- MIXER Tab -->
+<button class="flex flex-col items-center justify-center text-[#074242] dark:text-[#8C8A85] p-2 hover:bg-[#E4E2DD] dark:hover:bg-[#1A1A1A] w-full h-full">
+<span class="material-symbols-outlined mb-1">tune</span>
+<span class="font-['Epilogue'] text-[10px] font-bold uppercase tracking-wider">MIXER</span>
+</button>
+<!-- PROFILE Tab -->
+<button class="flex flex-col items-center justify-center text-[#074242] dark:text-[#8C8A85] p-2 hover:bg-[#E4E2DD] dark:hover:bg-[#1A1A1A] w-full h-full">
+<span class="material-symbols-outlined mb-1">person_4</span>
+<span class="font-['Epilogue'] text-[10px] font-bold uppercase tracking-wider">PROFILE</span>
+</button>
+</nav>
+</body></html>
