@@ -5,43 +5,220 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Kayam Records — Come to Record in Paradise</title>
-    <meta name="description" content="Come record in paradise. Kayam Records is a creative recording studio in Guatapé, Colombia — professional gear, accommodation included, and an unforgettable experience." />
+      content="width=device-width, initial-scale=1.0" />
+    <title>Kayam Records — Recording Studio in Guatapé, Colombia</title>
+    <meta name="description" content="Arrive Monday, leave Friday with a finished EP. Kayam Records is a recording studio &amp; artist residency in Guatapé, Colombia — pro gear &amp; on-site stay included." />
     <link rel="canonical" href="https://kayamrecords.com/" />
+    <meta name="theme-color" content="#074242" />
+
+    <!-- Language alternates (bilingual EN/ES single page) -->
+    <link rel="alternate" hreflang="en" href="https://kayamrecords.com/" />
+    <link rel="alternate" hreflang="es" href="https://kayamrecords.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://kayamrecords.com/" />
 
     <!-- Open Graph (Facebook, WhatsApp, LinkedIn…) -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Kayam Records" />
     <meta property="og:title" content="Kayam Records — Come to Record in Paradise" />
-    <meta property="og:description" content="Come record in paradise. Kayam Records is a creative recording studio in Guatapé, Colombia — professional gear, accommodation included, and an unforgettable experience." />
+    <meta property="og:description" content="A recording studio &amp; artist residency in Guatapé, Colombia. Arrive Monday with your project, leave Friday with a finished EP — pro gear &amp; on-site stay included." />
     <meta property="og:url" content="https://kayamrecords.com/" />
     <meta property="og:image" content="https://kayamrecords.com/assets/Rec_Podcast_47a04dba.jpeg" />
+    <meta property="og:image:alt" content="Kayam Records recording studio in Guatapé, Colombia" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="es_ES" />
 
     <!-- Twitter / X card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Kayam Records — Come to Record in Paradise" />
-    <meta name="twitter:description" content="Come record in paradise. Kayam Records is a creative recording studio in Guatapé, Colombia — professional gear, accommodation included, and an unforgettable experience." />
+    <meta name="twitter:description" content="Recording studio &amp; artist residency in Guatapé, Colombia. Arrive Monday, leave Friday with a finished EP — pro gear &amp; on-site stay included." />
     <meta name="twitter:image" content="https://kayamrecords.com/assets/Rec_Podcast_47a04dba.jpeg" />
+    <meta name="twitter:image:alt" content="Kayam Records recording studio in Guatapé, Colombia" />
 
-    <!-- Structured data: recording studio business -->
+    <!-- Structured data: recording studio business + services, video & reviews -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Kayam Records",
-      "description": "Creative recording studio in Guatapé, Colombia — record your album, EP or podcast in paradise, with professional gear and on-site accommodation.",
-      "url": "https://kayamrecords.com/",
-      "image": "https://kayamrecords.com/assets/Rec_Podcast_47a04dba.jpeg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Guatapé",
-        "addressRegion": "Antioquia",
-        "addressCountry": "CO"
-      },
-      "knowsLanguage": ["en", "es"]
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://kayamrecords.com/#studio",
+          "additionalType": "https://www.productontology.org/id/Recording_studio",
+          "name": "Kayam Records",
+          "description": "Recording studio and artist residency in Guatapé, Colombia — record your album, EP or podcast in paradise, with professional gear and on-site accommodation.",
+          "url": "https://kayamrecords.com/",
+          "image": "https://kayamrecords.com/assets/Rec_Podcast_47a04dba.jpeg",
+          "logo": "https://kayamrecords.com/assets/logo-kayam-new.png",
+          "telephone": "+573215764841",
+          "email": "casakayam@gmail.com",
+          "priceRange": "$$",
+          "currenciesAccepted": "USD",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Guatapé",
+            "addressRegion": "Antioquia",
+            "addressCountry": "CO"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 6.2167,
+            "longitude": -75.15
+          },
+          "founder": {
+            "@type": "Person",
+            "@id": "https://kayamrecords.com/#jerome",
+            "name": "Jérôme Filippi",
+            "jobTitle": "Sound Engineer",
+            "alumniOf": "SAE Institute Paris"
+          },
+          "knowsLanguage": ["en", "es"],
+          "sameAs": [
+            "https://www.instagram.com/kayamproject/",
+            "https://www.facebook.com/kayamproject/",
+            "https://www.youtube.com/@kayamproject"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Studio & accommodation services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Recording (studio session)" },
+                "priceSpecification": { "@type": "UnitPriceSpecification", "price": "25", "priceCurrency": "USD", "unitText": "HOUR" }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Recording Day (8h)" },
+                "priceSpecification": { "@type": "UnitPriceSpecification", "price": "180", "priceCurrency": "USD", "unitText": "DAY" }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Music Production" },
+                "priceSpecification": { "@type": "UnitPriceSpecification", "price": "350", "priceCurrency": "USD", "unitText": "track" }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Mixing" },
+                "priceSpecification": { "@type": "UnitPriceSpecification", "price": "180", "priceCurrency": "USD", "unitText": "track" }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Mastering" },
+                "priceSpecification": { "@type": "UnitPriceSpecification", "price": "70", "priceCurrency": "USD", "unitText": "track" }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Rehearsal" },
+                "priceSpecification": { "@type": "UnitPriceSpecification", "price": "10", "priceCurrency": "USD", "unitText": "HOUR" }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Production Class (Kayam Academy)" },
+                "priceSpecification": { "@type": "UnitPriceSpecification", "price": "20", "priceCurrency": "USD", "unitText": "HOUR" }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Accommodation", "name": "Glamping (2 guests)" },
+                "priceSpecification": { "@type": "UnitPriceSpecification", "price": "65", "priceCurrency": "USD", "unitText": "NGT" }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Accommodation", "name": "Private Room (2 guests)" },
+                "priceSpecification": { "@type": "UnitPriceSpecification", "price": "45", "priceCurrency": "USD", "unitText": "NGT" }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Accommodation", "name": "Dormitory Bed" },
+                "priceSpecification": { "@type": "UnitPriceSpecification", "price": "22", "priceCurrency": "USD", "unitText": "NGT" }
+              }
+            ]
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Oscar" },
+              "reviewBody": "Recording at Kayam was a transformative experience. The natural surroundings and professional setup created the perfect environment for creativity."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Eebbaa" },
+              "reviewBody": "Such a peaceful and calm space where you can really live at your own pace surrounded by beautiful nature and wonderful people. I highly recommend the music production classes I took with Jerome — an incredibly knowledgeable and engaging teacher. I was a complete beginner but now feel very confident thanks to his classes."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Sebastian Ricardo" },
+              "reviewBody": "Recording at Kayam Records was a wholesome experience. Jerome's professional direction and the great studio acoustics gave me a new look over the technical performance I should have as a performer. Highly recommended for traveling artists."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Nora" },
+              "reviewBody": "Staying in Casa Kayam was a really great experience! It's a place to connect to nature and to your creative energy. Jerome is an amazing teacher and I could even produce my first song ever in Casa Kayam."
+            }
+          ]
+        },
+        {
+          "@type": "VideoObject",
+          "@id": "https://kayamrecords.com/#studio-tour",
+          "name": "Kayam Records — Studio Tour",
+          "description": "A tour of the Kayam Records recording studio and artist residency in Guatapé, Colombia.",
+          "thumbnailUrl": "https://i.ytimg.com/vi/JyD7IEUQ-dE/sddefault.jpg",
+          "uploadDate": "2026-02-18",
+          "contentUrl": "https://www.youtube.com/watch?v=JyD7IEUQ-dE",
+          "embedUrl": "https://www.youtube.com/embed/JyD7IEUQ-dE",
+          "publisher": { "@id": "https://kayamrecords.com/#studio" }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://kayamrecords.com/#faq",
+          "about": { "@id": "https://kayamrecords.com/#studio" },
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Where is Kayam Records and how do I get there?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Kayam Records is in Guatapé, Antioquia, Colombia, about 2 hours from Medellín. The studio can arrange transportation from the city." }
+            },
+            {
+              "@type": "Question",
+              "name": "What equipment does Kayam Records have?",
+              "acceptedAnswer": { "@type": "Answer", "text": "The studio has professional-grade microphones, preamps and instruments in a fully acoustically treated recording room. Contact Kayam Records for a detailed equipment list." }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I stay overnight at Kayam Records?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes. Kayam Records is also an artist residency with on-site accommodation: a dormitory bed from $22/night, a private room from $45/night for 2 guests, and a bamboo glamping cabin from $65/night for 2 guests." }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Kayam Records offer residency packages?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes. Kayam Records offers 7, 15 and 30-day artistic residency packages that combine studio time and accommodation. Bundled packages include a 15% discount." }
+            },
+            {
+              "@type": "Question",
+              "name": "What genres does Kayam Records work with?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Kayam Records works with all genres, from Latin music and reggaeton to rock, electronic and classical. The team adapts to each artist's style." }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I bring my own producer or engineer?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can bring your own team or work with the in-house professionals at Kayam Records, led by founder and sound engineer Jérôme Filippi." }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the cancellation policy at Kayam Records?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Full refund if cancelled 7 or more days before the session, 50% refund with 3 to 7 days notice, and no refund for less than 3 days notice." }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Kayam Records offer music lessons?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes. Through Kayam Academy, Kayam Records offers production, mixing, mastering and instrument classes with experienced professionals, from $20/hour." }
+            },
+            {
+              "@type": "Question",
+              "name": "How much does it cost to record at Kayam Records?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Recording costs $25/hour or $180 for a full 8-hour recording day. Music production is $350/track, mixing $180/track and mastering $70/track. Prices are in USD (2026)." }
+            }
+          ]
+        }
+      ]
     }
     </script>
 
@@ -58,7 +235,64 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Static, crawlable summary for AI engines and no-JS clients. The interactive site renders into #root via JavaScript. -->
+      <noscript>
+        <main>
+          <h1>Kayam Records — Recording Studio &amp; Artist Residency in Guatapé, Colombia</h1>
+          <p>
+            Kayam Records is a professional recording studio and artist residency located in Guatapé,
+            Antioquia, Colombia, about 2 hours from Medellín. Artists arrive with a project and leave
+            with a finished EP, recording in an acoustically treated studio with on-site accommodation
+            included. The studio is run by founder and sound engineer Jérôme Filippi (SAE Institute Paris)
+            and works in English and Spanish across all genres, from Latin music and reggaeton to rock,
+            electronic and classical.
+          </p>
+
+          <h2>Services and pricing (USD, 2026)</h2>
+          <ul>
+            <li>Recording session: $25/hour</li>
+            <li>Full recording day (8 hours): $180/day</li>
+            <li>Music production: $350/track</li>
+            <li>Mixing: $180/track</li>
+            <li>Mastering: $70/track</li>
+            <li>Rehearsal room: $10/hour</li>
+            <li>Production classes (Kayam Academy): $20/hour</li>
+          </ul>
+
+          <h2>On-site accommodation</h2>
+          <ul>
+            <li>Dormitory bed: $22/night</li>
+            <li>Private room (2 guests): $45/night</li>
+            <li>Bamboo glamping cabin (2 guests): $65/night</li>
+          </ul>
+          <p>
+            Kayam Records also offers 7, 15 and 30-day artistic residency packages combining studio time
+            and accommodation, with a 15% discount on bundled packages.
+          </p>
+
+          <h2>Frequently asked questions</h2>
+          <dl>
+            <dt>Where is Kayam Records and how do I get there?</dt>
+            <dd>Kayam Records is in Guatapé, Antioquia, Colombia, about 2 hours from Medellín. The studio can arrange transportation from the city.</dd>
+            <dt>Can I stay overnight?</dt>
+            <dd>Yes. Kayam Records is an artist residency with on-site accommodation, from a $22/night dormitory bed to a $65/night bamboo glamping cabin.</dd>
+            <dt>What genres does Kayam Records work with?</dt>
+            <dd>All genres, from Latin music and reggaeton to rock, electronic and classical.</dd>
+            <dt>What is the cancellation policy?</dt>
+            <dd>Full refund if cancelled 7+ days before, 50% refund with 3–7 days notice, no refund under 3 days notice.</dd>
+            <dt>Does Kayam Records offer music lessons?</dt>
+            <dd>Yes. Through Kayam Academy, production, mixing, mastering and instrument classes are available from $20/hour.</dd>
+          </dl>
+
+          <h2>Contact</h2>
+          <p>
+            WhatsApp/phone: +57 321 576 4841 · Email: casakayam@gmail.com ·
+            Instagram, Facebook and YouTube: @kayamproject
+          </p>
+        </main>
+      </noscript>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 
