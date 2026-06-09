@@ -154,7 +154,7 @@ export default function Footer() {
                   <span>info@casakayam.com</span>
                 </a>
                 <a
-                  href="https://wa.me/573215764541"
+                  href="https://wa.me/573215764841"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 font-akshar text-white/50 hover:text-[#e63f0a] transition-colors"

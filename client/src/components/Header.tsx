@@ -126,7 +126,7 @@ export default function Header() {
       <a href="#" style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none', flexShrink: 0 }}>
         <img src="/assets/logo-kayam-new-small.png"
           width={96} height={96}
-          style={{ height: 48, width: 48, objectFit: 'contain' }} alt="Kayam" />
+          style={{ height: 48, width: 48, objectFit: 'contain' }} alt="Kayam Records logo" />
         <div style={{ lineHeight: 1 }}>
           <div style={{
             fontFamily: "'Anton', sans-serif",
@@ -245,7 +245,10 @@ export default function Header() {
 
         {/* Mobile menu button */}
         <button
+          type="button"
           className="lg:hidden"
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileOpen}
           onClick={() => setMobileOpen(!mobileOpen)}
           style={{ background: 'transparent', border: 'none', padding: 8, color: KP.ink }}
         >

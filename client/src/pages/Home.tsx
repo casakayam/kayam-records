@@ -21,7 +21,7 @@ const Testimonials     = lazy(() => import("@/components/Testimonials"));
 const BuildPackage     = lazy(() => import("@/components/BuildPackage"));
 
 const VIDEO_ID = 'JyD7IEUQ-dE';
-const VIDEO_THUMB = `https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg`;
+const VIDEO_THUMB = `https://img.youtube.com/vi/${VIDEO_ID}/sddefault.jpg`;
 const VIDEO_EMBED = `https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&rel=0`;
 
 function ParallaxWatermark({ children }: { children: React.ReactNode }) {
@@ -100,7 +100,9 @@ export default function Home() {
           >
             <img
               src={VIDEO_THUMB}
-              alt="Studio tour"
+              alt="Kayam Records studio tour video in Guatapé, Colombia"
+              loading="lazy"
+              decoding="async"
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
             <div style={{
@@ -180,7 +182,7 @@ export default function Home() {
               src="/assets/logo-kayam-new.png"
               loading="lazy"
               style={{ height: 40, width: 40, objectFit: 'contain' }}
-              alt="Kayam"
+              alt="Kayam Records logo"
             />
             <div style={{ lineHeight: 1 }}>
               <div style={{ fontFamily: "'Anton', sans-serif", fontSize: 16, letterSpacing: '0.14em', color: '#e4e2dd' }}>KAYAM</div>

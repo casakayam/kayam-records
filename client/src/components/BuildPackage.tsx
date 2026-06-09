@@ -381,7 +381,7 @@ const PackageHeader = memo(function PackageHeader({
                 style={{ position: 'absolute', left: '100%', marginLeft: 24, width: 160, background: '#ffffff', borderRadius: 4, padding: 16, boxShadow: '6px 6px 0 rgba(0,0,0,0.8)', border: '2px solid #1a1a1a', zIndex: 50, display: 'flex', flexDirection: 'column', alignItems: 'center', pointerEvents: 'none' }}
               >
                 <div style={{ width: 72, height: 72, borderRadius: '50%', marginBottom: 12, border: '2px solid #1a1a1a', overflow: 'hidden', background: '#e4e2dd' }}>
-                  <img src="/assets/jerome_avatar.jpg" alt="Jerome" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%', transform: 'scale(1.4)', transformOrigin: 'center 20%' }} />
+                  <img src="/assets/jerome_avatar.jpg" alt="Jérôme Filippi, sound engineer at Kayam Records" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%', transform: 'scale(1.4)', transformOrigin: 'center 20%' }} />
                 </div>
                 <Script color={KP.ink} size={32} style={{ lineHeight: 0.8 }}>Jerome</Script>
                 <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: '#1a1a1a', marginTop: 8, textTransform: 'uppercase', fontWeight: 'bold', background: '#25D366', padding: '4px 8px', borderRadius: 12 }}>Online</span>

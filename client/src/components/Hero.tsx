@@ -195,7 +195,7 @@ function CarouselDots({ current = 0, total = 4 }: { current?: number; total?: nu
       </span>
       <div style={{ display: 'flex', gap: 6 }}>
         {/* Left arrow */}
-        <button style={{
+        <button type="button" aria-label="Previous photo" style={{
           width: 32, height: 32, borderRadius: 999,
           border: '1px solid rgba(228,226,221,0.4)',
           background: 'rgba(0,0,0,0.3)', color: KP.beige,
@@ -206,7 +206,7 @@ function CarouselDots({ current = 0, total = 4 }: { current?: number; total?: nu
           <ArrowRight size={12} color={KP.beige} />
         </button>
         {/* Right arrow */}
-        <button style={{
+        <button type="button" aria-label="Next photo" style={{
           width: 32, height: 32, borderRadius: 999,
           border: '1px solid rgba(228,226,221,0.4)',
           background: 'rgba(0,0,0,0.3)', color: KP.beige,
