@@ -12,7 +12,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const rooms = [
   {
     id: 'private',
-    image: '/assets/room-private.webp',
+    image: '/assets/resized/room-private1.webp',
     title: { en: 'Private Room', es: 'Habitación Privada' },
     subtitle: { en: 'solo creators', es: 'creadores individuales' },
     description: { en: 'Individual bedroom with queen bed, workspace, and private bathroom. Lake view, natural light, and quiet space to compose between sessions.', es: 'Habitación individual con cama doble, espacio de trabajo y baño privado. Vista al lago, luz natural y espacio tranquilo para componer entre sesiones.' },
@@ -25,7 +25,7 @@ const rooms = [
   },
   {
     id: 'shared',
-    image: '/assets/room-shared.webp',
+    image: '/assets/resized/room-shared1.webp',
     title: { en: 'Shared Room', es: 'Habitación Compartida' },
     subtitle: { en: 'collaborative stay', es: 'estadía colaborativa' },
     description: { en: 'Dormitory-style rooms with 4–6 beds. Shared bathrooms, communal living areas, and kitchen access. Perfect for bands and collaborative projects.', es: 'Habitaciones estilo dormitorio con 4–6 camas. Baños compartidos, áreas comunes y acceso a cocina. Perfecto para bandas y proyectos colaborativos.' },
@@ -38,7 +38,7 @@ const rooms = [
   },
   {
     id: 'cabin',
-    image: '/assets/room-cabin.webp',
+    image: '/assets/resized/room-cabin1.webp',
     title: { en: 'Forest Cabin', es: 'Cabaña del Bosque' },
     subtitle: { en: 'deep focus retreat', es: 'retiro de enfoque profundo' },
     description: { en: 'Standalone cabin in the forest, 5 minutes from the main house. Total isolation, wood stove, outdoor shower. For artists seeking solitude and immersion.', es: 'Cabaña independiente en el bosque, a 5 minutos de la casa principal. Aislamiento total, estufa de leña, ducha al aire libre. Para artistas que buscan soledad e inmersión.' },
