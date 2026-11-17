@@ -1,15 +1,15 @@
 # Kayam Records — site vitrine (kayamrecords.com)
 
 Landing page one-page du studio-résidence Kayam Records à Guatapé (Colombie), bilingue EN/ES.
-Repo : `casakayam/kayam-records` (branche `main`). Site live : https://kayamrecords.com (Cloudflare devant, build Netlify via `netlify.toml`).
+Repo : `casakayam/kayam-records` (branche `main`). Site live : https://kayamrecords.com (hébergé sur **Cloudflare Pages**, projet `kayam-records`, déploiement automatique depuis GitHub ; réglages de build dans le dashboard Cloudflare, routage SPA via `client/public/_redirects`). `netlify.toml` et `vercel.json` sont des restes, non utilisés.
 
 ## Commandes
 
 - `npm run dev` → http://localhost:3000 (Vite, hot reload). Dans l'app : aperçu `kayam-dev`.
 - `npx tsc --noEmit` → typecheck. **1 erreur préexistante** dans `BuildPackage.tsx:208` (itération de Map, pas de `target` dans tsconfig) ; ne compter que les nouvelles erreurs.
 - `npx vite build` → vérifier que le site compile **sans toucher aux images**.
-- ⚠️ `npm run build` lance aussi `optimize-images.cjs`, qui **recompresse en place** les PNG/JPEG de `client/public/assets/` (perte de qualité cumulative + gros diff git). Ne pas le lancer en local, sauf demande explicite. Netlify le lance de toute façon à chaque déploiement.
-- `npm start` utilise la syntaxe `NODE_ENV=production …` (ne marche pas sous PowerShell) ; inutile pour Netlify.
+- ⚠️ `npm run build` lance aussi `optimize-images.cjs`, qui **recompresse en place** les PNG/JPEG de `client/public/assets/` (perte de qualité cumulative + gros diff git). Ne pas le lancer en local, sauf demande explicite. Cloudflare Pages le lance de toute façon à chaque déploiement.
+- `npm start` utilise la syntaxe `NODE_ENV=production …` (ne marche pas sous PowerShell) ; inutile pour Cloudflare Pages (site statique).
 
 ## Architecture
 
@@ -30,7 +30,7 @@ Repo : `casakayam/kayam-records` (branche `main`). Site live : https://kayamreco
 - **Prix = 4 endroits à synchroniser** : `catalog.ts`, textes des composants (`Services`, `Accommodation`…), JSON-LD `Offer` + FAQ dans `index.html`, bloc `<noscript>`. Voir skill `kayam-content`.
 - Charte graphique : skill `kayam-brand` (source : `docs/brand-guidelines.md`).
 - Vérifier visuellement chaque changement dans l'aperçu (desktop + mobile 375px) avant de livrer.
-- Mise en ligne : skill `kayam-ship` — branche → commit → push → PR → merge sur `main` → Netlify déploie. Jamais de push direct sur `main` sans accord.
+- Mise en ligne : skill `kayam-ship` — branche → commit → push → PR → merge sur `main` → Cloudflare Pages déploie. Chaque branche poussée a un aperçu `https://<branche>.kayam-records.pages.dev`. Jamais de push direct sur `main` sans accord.
 - Accès GitHub : le compte `gh` connecté sur ce PC (`hifago`) est collaborateur avec droit **écriture** (accordé le 2026-11-17).
 - Fichiers d'archives à ne pas éditer : `kayam_records_full_code.txt` (export généré par `export.cjs`), `stitch_*.html`, `ideas.md` (idées initiales obsolètes), `why_choose_kayam_images.zip`.
 - Ressources business (tarifs xlsx, propositions PDF, photos) : dossier parent `../` (`Offres & tarifs`, `Site & ressources`).
