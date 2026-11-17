@@ -1,11 +1,13 @@
 ---
 name: kayam-ship
-description: Vérifier, committer, pousser et mettre en ligne les modifications du site Kayam Records (GitHub casakayam/kayam-records → Netlify → kayamrecords.com), puis contrôler le site live. À utiliser quand l'utilisateur dit « mets en ligne », « publie », « déploie », « pousse sur GitHub », « fais une PR », « commit », « c'est bon on envoie », ou demande si une modif est visible en ligne.
+description: Vérifier, committer, pousser et mettre en ligne les modifications du site Kayam Records (GitHub casakayam/kayam-records → Cloudflare Pages → kayamrecords.com), puis contrôler le site live. À utiliser quand l'utilisateur dit « mets en ligne », « publie », « déploie », « pousse sur GitHub », « fais une PR », « commit », « c'est bon on envoie », ou demande si une modif est visible en ligne.
 ---
 
 # Mettre en ligne kayamrecords.com
 
-Chaîne : branche locale → push GitHub → PR → merge dans `main` → Netlify build (`npm run build`, publie `dist/public`) → Cloudflare → https://kayamrecords.com
+Chaîne : branche locale → push GitHub → PR → merge dans `main` → Cloudflare Pages (projet `kayam-records`) build et publie → https://kayamrecords.com
+
+Les réglages de build (commande, dossier de sortie) sont dans le dashboard Cloudflare, pas dans le repo. `netlify.toml` / `vercel.json` ne servent pas.
 
 ## 0. Prérequis accès (à vérifier une fois par session)
 
@@ -36,7 +38,11 @@ Contrôle visuel dans l'aperçu `kayam-dev` : desktop + mobile, EN/ES, console.
 git push -u origin HEAD
 gh pr create --repo casakayam/kayam-records --base main --fill
 ```
-Netlify génère normalement une *deploy preview* sur la PR : donner son lien à l'utilisateur pour validation.
+Cloudflare Pages construit un aperçu pour chaque branche poussée (check « Cloudflare Pages » sur la PR + commentaire du bot avec les liens) : `https://<branche-avec-tirets>.kayam-records.pages.dev` (ex. `chore/claude-setup` → `chore-claude-setup.kayam-records.pages.dev`). Le récupérer et le donner à l'utilisateur pour validation :
+```bash
+gh pr view <n> --repo casakayam/kayam-records --json comments --jq '.comments[].body' | grep -o 'https://[^ )"<]*kayam-records.pages.dev'
+```
+Si le check « Cloudflare Pages » échoue, le build est cassé : ne pas merger.
 
 ## 4. Merger (seulement avec accord explicite)
 
@@ -47,7 +53,7 @@ git switch main && git pull
 
 ## 5. Contrôler le live
 
-Netlify met ~1-3 min. Ensuite :
+Cloudflare Pages met ~1-3 min après le merge. Ensuite :
 ```bash
 curl -s https://kayamrecords.com | grep -o 'assets/index-[^"]*\.js'
 ```
