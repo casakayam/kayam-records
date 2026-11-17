@@ -50,6 +50,12 @@ const DEFAULT_PROPS = {
   flickering: true,
 };
 
+// Firefox snaps the sub-pixel translateY of vhs-jitter to whole device pixels and
+// re-rasterises the full page on every vhs-filter-shift step, so the whole site
+// visibly shakes. Chromium/Edge composite both smoothly. On Firefox we drop the
+// moving effects and keep only an opacity flicker (no pixel movement).
+const IS_FIREFOX = typeof navigator !== "undefined" && /firefox/i.test(navigator.userAgent);
+
 export default function VHSOverlay(props: VHSOverlayProps) {
   const config = { ...DEFAULT_PROPS, ...props };
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -266,6 +272,13 @@ export default function VHSOverlay(props: VHSOverlayProps) {
         80% { transform: translateY(0.1px); opacity: 0.985; }
         100% { transform: translateY(0px); opacity: 1; }
       }
+      @keyframes vhs-flicker {
+        0%, 100% { opacity: 1; }
+        20% { opacity: 0.995; }
+        40% { opacity: 0.99; }
+        60% { opacity: 0.995; }
+        80% { opacity: 0.985; }
+      }
     `;
     document.head.appendChild(style);
     return () => {
@@ -275,6 +288,14 @@ export default function VHSOverlay(props: VHSOverlayProps) {
   }, []);
 
   const i = config.intensity;
+  const effectsOn = !videoPlaying;
+  const contentAnimation = (IS_FIREFOX
+    ? [effectsOn && (config.jitter || config.flickering) ? "vhs-flicker 0.15s linear infinite" : ""]
+    : [
+        config.rgbShift && effectsOn ? "vhs-filter-shift 0.4s steps(4) infinite" : "",
+        (config.jitter || config.flickering) && effectsOn ? "vhs-jitter 0.15s linear infinite" : "",
+      ]
+  ).filter(Boolean).join(", ") || undefined;
 
   return (
     <div
@@ -284,16 +305,13 @@ export default function VHSOverlay(props: VHSOverlayProps) {
         minHeight: "100vh",
       }}
     >
-      {/* rgbShift & jitter via CSS animation (GPU compositor) */}
+      {/* rgbShift & jitter via CSS animation (GPU compositor); Firefox: opacity flicker only */}
       <div
         id="vhs-content-wrapper"
         style={{
           position: "relative",
-          willChange: "transform, opacity, filter",
-          animation: [
-            config.rgbShift && !videoPlaying ? "vhs-filter-shift 0.4s steps(4) infinite" : "",
-            (config.jitter || config.flickering) && !videoPlaying ? "vhs-jitter 0.15s linear infinite" : ""
-          ].filter(Boolean).join(", ") || undefined,
+          willChange: IS_FIREFOX ? "opacity" : "transform, opacity, filter",
+          animation: contentAnimation,
         }}
       >
         {props.children}
